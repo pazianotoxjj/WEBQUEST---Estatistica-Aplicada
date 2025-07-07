@@ -1,0 +1,265 @@
+ body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding-top: 140px; /* espaço pro header fixo */
+    }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #004080;
+  color: white;
+  padding: 1rem 3rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  user-select: none;
+  height: 70px;
+  /* Removendo flex desnecessário aqui */
+  display: block;
+}
+
+
+.header-container {
+  display: flex;
+  flex-direction: column; /* título em cima, menu embaixo */
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Título */
+.titulo-header {
+  font-size: 1.8rem;
+  font-weight: 700;
+  user-select: none;
+  margin-bottom: 4rem; /* um pouco mais de espaço para o menu */
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+
+/* Menu nav abaixo do título, centralizado */
+nav#navMenu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  background: transparent;
+  width: 100%;
+  max-width: 900px;
+  transform: translateX(110px); /* Ajuste pra direita */
+}
+
+
+/* Mostrar menu no desktop */
+@media(min-width: 768px) {
+  nav#navMenu {
+    display: flex !important;
+  }
+
+  .menu-hamburguer {
+    display: none;
+  }
+
+  .titulo-header {
+    text-align: left;
+    max-width: none;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Links do menu */
+nav#navMenu a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav#navMenu a:hover,
+nav#navMenu a:focus {
+  border-color: #a3c1f0;
+  outline: none;
+}
+
+
+/* MAIN E SEÇÕES */
+main {
+  padding: 2rem 1rem 4rem 1rem;
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+main section {
+  background: linear-gradient(135deg, #e0f0ff 0%, #ffffff 100%);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 64, 128, 0.2);
+  transition: box-shadow 0.4s ease;
+  cursor: default;
+}
+
+main section:hover,
+main section:focus-within {
+  box-shadow: 0 12px 30px rgba(0, 64, 128, 0.35);
+}
+
+/* Título das seções */
+main section h2,
+main section h1 {
+  color: #003366;
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  user-select: none;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main section h1 {
+  font-size: 2.4rem;
+}
+
+main section h2 {
+  font-size: 2.2rem;
+}
+
+/* Parágrafos */
+main section p,
+main section ol,
+main section ul {
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #1a1a1a;
+  text-align: justify;
+  max-width: 700px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+main section p:hover,
+main section ol:hover,
+main section ul:hover {
+  transform: translateX(5px);
+  color: #004080;
+  font-weight: 600;
+}
+
+/* Responsividade */
+
+/* Em telas maiores, mostrar menu sempre horizontal */
+@media (min-width: 768px) {
+  header {
+    padding: 1rem 3rem;
+  }
+
+  /* Esconde o hamburguer */
+  #menuToggle.menu-hamburguer {
+    display: none;
+  }
+
+  #navMenu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  #navMenu a {
+    border: none;
+    padding: 0 1.5rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  #navMenu a:hover,
+  #navMenu a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .titulo-header {
+    text-align: left;
+    max-width: none;
+    margin: 0;
+  }
+
+  main {
+    margin: 4rem auto 5rem auto;
+  }
+}
+
+/* Container geral */
+.videos-estatistica {
+  max-width: 1400px;       /* largura máxima maior */
+  margin: 3rem auto;       /* centraliza horizontal e espaça verticalmente */
+  padding: 1rem 2rem;
+  background: #f7fbff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 64, 128, 0.1);
+}
+
+/* Título principal */
+.titulo-videos {
+  font-size: 2.6rem;
+  text-align: center;
+  color: #003366;
+  margin-bottom: 3rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Cada box de vídeo */
+.video-box {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/* Títulos dos níveis */
+.video-box h2 {
+  font-size: 1.8rem;
+  color: #004080;
+  margin-bottom: 0.8rem;
+}
+
+/* Parágrafos com descrição */
+.video-box p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #004080cc;
+}
+
+.video-container {
+  position: relative;       /* obrigatório para o iframe absoluto */
+  width: 90%;               /* tamanho responsivo */
+  max-width: 900px;         /* limite máximo */
+  height: 0;                /* base para o padding-bottom */
+  padding-bottom: 56.25%;   /* 16:9 */
+  margin: 1.5rem auto;      /* centralizar horizontal */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 64, 128, 0.15);
+  background-color: #000;   /* fundo preto para carregar vídeo */
+}
+
+.video-container iframe {
+  position: absolute;       /* cobre todo o container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;           /* elimina espaços brancos */
+}
